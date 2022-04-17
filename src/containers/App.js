@@ -37,7 +37,7 @@ function App() {
       clouds: recurso.clouds.all,
       latitud: recurso.coord.lat,
       longitud: recurso.coord.lon,
-      isNight: (Date.now()-recurso.sys.sunset*1000)>=0||(Date.now()-recurso.sys.sunset*1000)>=72000*1000,
+      isNight: (Date.now()-recurso.sys.sunset*1000)>=0||(Date.now()-recurso.sys.sunset*1000)>=61200*1000,
       status:200
     })});
   },[position])
@@ -72,7 +72,7 @@ function App() {
             clouds: recurso.clouds.all,
             latitud: recurso.coord.lat,
             longitud: recurso.coord.lon,
-            isNight: (Date.now()-recurso.sys.sunset*1000)>=0||-(Date.now()-recurso.sys.sunset*1000)>=72000*1000
+            isNight: (Date.now()-recurso.sys.sunset*1000)>=0||-(Date.now()-recurso.sys.sunset*1000)>=61200*1000
           };
           !cities.find(c=>c.id===ciudad.id)&&setCities(oldCities => [...oldCities, ciudad]);
         } else {
