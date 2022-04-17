@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import AboutMeBtn from './AboutMeBtn';
 import linkedin from '../img/linkedin.svg'
 import github from '../img/github.svg'

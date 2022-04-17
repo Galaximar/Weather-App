@@ -1,9 +1,8 @@
 import React from 'react';
 import './Card.css';
-import { Link } from 'react-router-dom';
 import InfoCard from './InfoCard';
 import InfoMyCity from './InfoMyCity'
-export default function Card ({wind,weather,clouds,latitud,longitud,temp,min, max, name, img, onClose, id,isMyCity}) {
+export default function Card ({isNight,wind,weather,clouds,latitud,longitud,temp,min, max, name, img, onClose, id,isMyCity}) {
     return (
       <>
       {isMyCity?
@@ -19,6 +18,7 @@ export default function Card ({wind,weather,clouds,latitud,longitud,temp,min, ma
       clouds={clouds}
       latitud={latitud}
       longitud={longitud} 
+      isNight={isNight}
       />
       </div>
       :<div className='containerInfoCard'>
@@ -36,6 +36,7 @@ export default function Card ({wind,weather,clouds,latitud,longitud,temp,min, ma
         clouds={clouds}
         latitud={latitud}
         longitud={longitud} 
+        isNight={isNight}
         />
       </div>}
       </>

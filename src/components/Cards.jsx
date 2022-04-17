@@ -23,6 +23,7 @@ export default function Cards({myCitie,cities,onClose}) {
           latitud={myCitie.latitud}
           longitud={myCitie.longitud}
           onClose={() => onClose(myCitie.id)}
+          isNight={myCitie.isNight}
           />
         }
       </div>
@@ -40,6 +41,7 @@ export default function Cards({myCitie,cities,onClose}) {
           latitud={c.latitud}
           longitud={c.longitud}
           onClose={() => onClose(c.id)}
+          isNight={c.isNight}
         /> )}
     </div>
   );

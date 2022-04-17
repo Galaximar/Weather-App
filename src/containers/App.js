@@ -13,6 +13,7 @@ function App() {
   const [cities, setCities] = useState([]);
   const [myCitie,setMyCitie] = useState({});
   const [position,setPosition] = useState(400);
+
   useEffect(()=>{
     navigator.geolocation.getCurrentPosition(
       (position)=>
@@ -35,8 +36,9 @@ function App() {
       weather: recurso.weather[0].main,
       clouds: recurso.clouds.all,
       latitud: recurso.coord.lat,
-      longitud: recurso.coord.lon
-      ,status:200
+      longitud: recurso.coord.lon,
+      isNight: (Date.now()-recurso.sys.sunset*1000)>=0,
+      status:200
     })});
   },[position])
 
@@ -68,9 +70,10 @@ function App() {
             weather: recurso.weather[0].main,
             clouds: recurso.clouds.all,
             latitud: recurso.coord.lat,
-            longitud: recurso.coord.lon
+            longitud: recurso.coord.lon,
+            isNight: (Date.now()-recurso.sys.sunset*1000)>=0
           };
-          setCities(oldCities => [...oldCities, ciudad]);
+          !cities.find(c=>c.id===ciudad.id)&&setCities(oldCities => [...oldCities, ciudad]);
         } else {
           alert("Ciudad no encontrada");
         }

@@ -1,4 +1,14 @@
 .textInfo{
     display: flex;
     justify-content: space-between;
+    position: relative;
+}
+.day{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 292.3px;
+    z-index: -1;
+    opacity: .6;
 }
