@@ -37,7 +37,7 @@ function App() {
       clouds: recurso.clouds.all,
       latitud: recurso.coord.lat,
       longitud: recurso.coord.lon,
-      isNight: (Date.now()-recurso.sys.sunset*1000)>=0,
+      isNight: (Date.now()-recurso.sys.sunset*1000)>=0||(Date.now()-recurso.sys.sunset*1000)>=72000*1000,
       status:200
     })});
   },[position])
@@ -59,6 +59,7 @@ function App() {
       .then(r => r.json())
       .then((recurso) => {
         if(recurso.main !== undefined){
+          //madrid, sunset:1650308155
           const ciudad = {
             min: Math.round(recurso.main.temp_min),
             max: Math.round(recurso.main.temp_max),
@@ -71,7 +72,7 @@ function App() {
             clouds: recurso.clouds.all,
             latitud: recurso.coord.lat,
             longitud: recurso.coord.lon,
-            isNight: (Date.now()-recurso.sys.sunset*1000)>=0
+            isNight: (Date.now()-recurso.sys.sunset*1000)>=0||-(Date.now()-recurso.sys.sunset*1000)>=72000*1000
           };
           !cities.find(c=>c.id===ciudad.id)&&setCities(oldCities => [...oldCities, ciudad]);
         } else {
