@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchBar from './SearchBar.jsx';
 import './Nav.css';
-import navImg from '../img/nav1.jpg'
+
 
 function Nav({onSearch}) {
   return (

@@ -3,7 +3,7 @@ import './SearchBar.css'
 import SearchIcon from '@mui/icons-material/Search';
 import { LoadingButton } from '@mui/lab';
 import ApartmentIcon from '@mui/icons-material/Apartment';
-import {withWidth,Hidden} from "@material-ui/core"
+import {withWidth} from "@material-ui/core"
 
 const btnStyle={
     width: "12%",

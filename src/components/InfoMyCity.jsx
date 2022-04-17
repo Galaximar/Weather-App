@@ -8,7 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './InfoMyCity.css'
-import {withWidth,Hidden} from "@material-ui/core"
+import {withWidth} from "@material-ui/core"
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
