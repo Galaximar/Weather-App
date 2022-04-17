@@ -22,7 +22,7 @@ function App() {
   },[])
   useEffect(()=>{
     position===400?setMyCitie({status:400})
-    :fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${position[1]}&lon=${position[0]}&units=metric&appid=${apiKey}`)
+    :fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${position[1]}&lon=${position[0]}&units=metric&appid=${apiKey}`)
     .then(r=>r.json())
     .then(recurso=>{setMyCitie({
       min: Math.round(recurso.main.temp_min),

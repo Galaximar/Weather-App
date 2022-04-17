@@ -33,12 +33,12 @@ export default function Cards({myCitie,cities,onClose}) {
           min={c.min}
           name={c.name}
           img={c.img}
-          temp={myCitie.temp}
-          wind={myCitie.wind}
-          weather={myCitie.weather}
-          clouds={myCitie.clouds}
-          latitud={myCitie.latitud}
-          longitud={myCitie.longitud}
+          temp={c.temp}
+          wind={c.wind}
+          weather={c.weather}
+          clouds={c.clouds}
+          latitud={c.latitud}
+          longitud={c.longitud}
           onClose={() => onClose(c.id)}
         /> )}
     </div>
