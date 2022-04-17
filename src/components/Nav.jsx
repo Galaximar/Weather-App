@@ -6,7 +6,7 @@ import navImg from '../img/nav1.jpg'
 function Nav({onSearch}) {
   return (
     <nav className="navBar">
-      <img src={navImg} alt="Navbar" />
+      <img src="https://p0.pikrepo.com/preview/440/980/white-and-brown-mountains-under-orange-sky-during-sunset.jpg" alt="Navbar" />
         <SearchBar
           onSearch={onSearch}
         />

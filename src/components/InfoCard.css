@@ -8,7 +8,8 @@
     width: 100%;
     top: 0;
     left: 0;
-    height: 292.3px;
+    height: 291.97px;
+    border-radius: 4px;
     z-index: -1;
     opacity: .6;
 }

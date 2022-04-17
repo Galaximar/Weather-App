@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './InfoMyCity.css'
+import {withWidth,Hidden} from "@material-ui/core"
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -20,7 +21,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function InfoCard({wind,weather,clouds,latitud,longitud,temp,min, max, name, img}) {
+export default withWidth() (function InfoCard({width,wind,weather,clouds,latitud,longitud,temp,min, max, name, img}) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -31,7 +32,7 @@ export default function InfoCard({wind,weather,clouds,latitud,longitud,temp,min,
     <Card sx={{width: "100%", background:"rgba(0,0,0,.7)", position:"relative"}}>
       <CardContent>
         <div className='infoMC'>
-            <Typography variant="h5" sx={{height:0,color:"white",mt:"-10px"}}>
+            <Typography variant={`${width==="xs"?"h8":"h5"}`} sx={{height:`${width==="xs"?"10px":"0px"}`,color:"white",mt:`${width==="xs"?"-5px":"-10px"}`}}>
             {name}
             </Typography>
             <div className='infoMC'>
@@ -92,3 +93,4 @@ export default function InfoCard({wind,weather,clouds,latitud,longitud,temp,min,
     </Card>
   );
 }
+)

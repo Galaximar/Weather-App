@@ -3,6 +3,7 @@ import './SearchBar.css'
 import SearchIcon from '@mui/icons-material/Search';
 import { LoadingButton } from '@mui/lab';
 import ApartmentIcon from '@mui/icons-material/Apartment';
+import {withWidth,Hidden} from "@material-ui/core"
 
 const btnStyle={
     width: "12%",
@@ -19,7 +20,7 @@ const btnStyle={
     overflow: "hidden",
     '&:hover':{background:"black", color:"black"}
 }
-export default function SearchBar({onSearch}) {
+export default withWidth() (function SearchBar({onSearch,width}) {
   const [city, setCity] = useState("");
   const [searching,setSearching] = useState(false);
   if(searching){
@@ -42,6 +43,8 @@ export default function SearchBar({onSearch}) {
         />
         <span><SearchIcon /></span>
       </div>
+      {console.log(width)}
+      <Hidden xsDown>
       <LoadingButton
         loading={searching}
         loadingPosition="start"
@@ -55,6 +58,7 @@ export default function SearchBar({onSearch}) {
       >
         Add
       </LoadingButton>
+      </Hidden>
     </form>
   );
-}
+})
