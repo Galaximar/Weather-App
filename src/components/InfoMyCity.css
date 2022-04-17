@@ -1,0 +1,12 @@
+.infoMC{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 42px;
+}
+.infoMC img{
+    position: absolute;
+    top: -12px;
+    right: 30px;
+    width: 70px;
+    height: 70px;
+}

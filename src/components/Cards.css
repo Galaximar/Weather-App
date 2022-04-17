@@ -1,0 +1,11 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  margin-top: 140px;
+  margin-bottom: 100px;
+}
+.myCityContainer{
+  width: 100%;
+}

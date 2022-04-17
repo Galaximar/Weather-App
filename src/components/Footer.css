@@ -1,0 +1,23 @@
+.footer{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.87);
+    position: relative;
+    bottom: 0;
+}
+.fixed{
+    position: fixed;
+}
+.linkedin{
+    position: absolute;
+    left: 0;
+    top:50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+.github{
+    position: absolute;
+    right: 0;
+    top:50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
