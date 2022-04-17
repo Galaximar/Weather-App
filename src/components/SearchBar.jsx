@@ -26,10 +26,11 @@ export default withWidth() (function SearchBar({onSearch,width}) {
   if(searching){
     setTimeout(()=>setSearching(false),1000);
   }
-  const searchCity=()=>{
+  const searchCity=(e)=>{
+    e.preventDefault()
     onSearch(city);
     setCity("");
-    setSearching(true);
+    width!=="xs"&&setSearching(true);
   }
   return (
     <form className="search">
@@ -43,13 +44,11 @@ export default withWidth() (function SearchBar({onSearch,width}) {
         />
         <span><SearchIcon /></span>
       </div>
-      {console.log(width)}
-      <Hidden xsDown>
       <LoadingButton
         loading={searching}
         loadingPosition="start"
         fullWidth 
-        sx={btnStyle}
+        sx={{...btnStyle,visibility:`${width==="xs"?"hidden":"visible"}`}}
         type="submit"
         className="button"
         onClick={searchCity}
@@ -58,7 +57,6 @@ export default withWidth() (function SearchBar({onSearch,width}) {
       >
         Add
       </LoadingButton>
-      </Hidden>
     </form>
   );
 })
