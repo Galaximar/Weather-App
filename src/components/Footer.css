@@ -11,12 +11,16 @@
     position: absolute;
     left: 0;
     top:50%;
+    height: 48px;
+    width: 48px;
     transform: translateY(-50%);
     cursor: pointer;
 }
 .github{
     position: absolute;
     right: 0;
+    height: 48px;
+    width: 48px;
     top:50%;
     transform: translateY(-50%);
     cursor: pointer;
