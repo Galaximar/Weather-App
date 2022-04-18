@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './CiudadInfo.css'
 import { Typography } from "@mui/material";
+import {withWidth} from "@material-ui/core"
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
@@ -20,7 +21,7 @@ const ExpandMore = styled((props) => {
     }),
   }));
 
-export default function Ciudad({c}) {
+export default withWidth() (function Ciudad({c,width}) {
     const [expanded, setExpanded] = useState(false);
 
     const windDirection=(deg)=>
@@ -54,7 +55,7 @@ export default function Ciudad({c}) {
       setExpanded(!expanded);
     };
     return ( 
-        <div className="ciudadContainer">
+        <div className={`${width==="xs"?"ciudadCel":null} ciudadContainer`}>
             <Card sx={{height:"auto",color:`${c.sys.pod==="n"?"white":"rgba(0, 0, 0, 0.6)"}`,background:`${c.sys.pod!=="n"?"rgb(255, 221, 225,.5)":"rgba(0,0,0,.7)"}`}}  key={c.dt}>
                 <CardContent sx={{padding:0}}>
                     <div className='ciudadDate'>
@@ -124,4 +125,4 @@ export default function Ciudad({c}) {
             </Card>
         </div>
     )
-}
+})

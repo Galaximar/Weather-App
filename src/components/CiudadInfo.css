@@ -28,6 +28,11 @@
     margin-right: 100px;
     margin-bottom: 10px;
 }
+.ciudadCel{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
 .ciudadInfo{
     margin: 10px;
     text-align: center;
