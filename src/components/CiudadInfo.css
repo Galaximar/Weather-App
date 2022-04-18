@@ -1,0 +1,69 @@
+.ciudadDate{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10px;
+    position: relative;
+}
+.ciudadFlex{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+}
+.ciudadFlex img {
+    width: 50px;
+    height: 100%;
+}
+.ciudadFlex p {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50px;
+    width: 60px;
+}
+.ciudadContainer{
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 10px;
+}
+.ciudadInfo{
+    margin: 10px;
+    text-align: center;
+}
+.ciudadInfo p{
+    margin: 0;
+}
+.ciudadInfo p:first-letter {
+    text-transform: uppercase;
+}
+.ciudadTitle{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+.ciudadFecha{
+    position: absolute;
+    right: 0;
+    transform: translateX(-50%);
+    top: 0;
+}
+.ciudadFecha p {
+    margin: 0;
+}
+.ciudadDay{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 291.97px;
+    border-radius: 4px;
+    z-index: -1;
+    opacity: .6;
+}
+.spaceBetween{
+    display: flex;
+    justify-content: space-between;
+}

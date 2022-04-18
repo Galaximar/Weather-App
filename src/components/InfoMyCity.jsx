@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './InfoMyCity.css'
 import {withWidth} from "@material-ui/core"
+import { Link } from 'react-router-dom';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -21,7 +22,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default withWidth() (function InfoCard({width,wind,weather,clouds,latitud,longitud,temp,min, max, name, img}) {
+export default withWidth() (function InfoCard({id,pressure,humidity,width,wind,weather,clouds,latitud,longitud,temp,min, max, name, img}) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -33,7 +34,7 @@ export default withWidth() (function InfoCard({width,wind,weather,clouds,latitud
       <CardContent>
         <div className='infoMC'>
             <Typography variant={`${width==="xs"?"h8":"h5"}`} sx={{height:`${width==="xs"?"10px":"0px"}`,color:"white",mt:`${width==="xs"?"-5px":"-10px"}`}}>
-            {name}
+              <Link to={`city/${id}`}>{name}</Link>
             </Typography>
             <div className='infoMC'>
                 <Typography variant="body2" sx={{height:0,color:"white",mt:"0px"}}>
@@ -77,7 +78,7 @@ export default withWidth() (function InfoCard({width,wind,weather,clouds,latitud
                     Wind     
                 </Typography>
                 <Typography sx={{color:"white"}}>
-                    {wind} km/h
+                    {wind} m/s
                 </Typography>
             </div>
             <div className='textInfo'>
@@ -86,6 +87,22 @@ export default withWidth() (function InfoCard({width,wind,weather,clouds,latitud
                 </Typography>
                 <Typography sx={{color:"white"}}>
                     {weather}
+                </Typography>
+            </div>
+            <div className='textInfo'>
+                <Typography sx={{color:"white"}} paragraph>
+                    Pressure    
+                </Typography>
+                <Typography sx={{color:"white"}}>
+                    {pressure} hPa
+                </Typography>
+            </div>
+            <div className='textInfo'>
+                <Typography sx={{color:"white"}} paragraph>
+                    Humidity    
+                </Typography>
+                <Typography sx={{color:"white"}}>
+                    {humidity} %
                 </Typography>
             </div>
         </CardContent>

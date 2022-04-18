@@ -21,6 +21,8 @@ export default function Cards({myCitie,cities,onClose}) {
           weather={myCitie.weather}
           clouds={myCitie.clouds}
           latitud={myCitie.latitud}
+          pressure={myCitie.pressure}
+          humidity={myCitie.humidity}
           longitud={myCitie.longitud}
           onClose={() => onClose(myCitie.id)}
           isNight={myCitie.isNight}
@@ -36,6 +38,8 @@ export default function Cards({myCitie,cities,onClose}) {
           img={c.img}
           temp={c.temp}
           wind={c.wind}
+          pressure={c.pressure}
+          humidity={c.humidity}
           weather={c.weather}
           clouds={c.clouds}
           latitud={c.latitud}

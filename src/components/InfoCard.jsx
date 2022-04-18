@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './InfoCard.css'
+import { Link } from 'react-router-dom';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -21,7 +22,7 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function InfoCard({isNight,wind,weather,clouds,latitud,longitud,temp,min, max, name, img}) {
+export default function InfoCard({id,isNight,pressure,humidity,wind,weather,clouds,latitud,longitud,temp,min, max, name, img}) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -37,7 +38,7 @@ export default function InfoCard({isNight,wind,weather,clouds,latitud,longitud,t
           :<img className='day' src="https://png.pngtree.com/thumb_back/fw800/background/20200103/pngtree-trees-silhouette-on-orange-sky-background-vector-illustration-sunset-in-forest-image_326117.jpg" alt="day" />
           }
             <Typography sx={{color:`${isNight?"white":"rgba(0, 0, 0, 0.6)"}`}} variant="body2" color="text.secondary">
-            {name}
+            <Link to={`city/${id}`}>{name}</Link>
             </Typography>
             <div>
                 <Typography sx={{color:`${isNight?"white":"rgba(0, 0, 0, 0.6)"}`}} variant="body2" color="text.secondary">
@@ -102,7 +103,7 @@ export default function InfoCard({isNight,wind,weather,clouds,latitud,longitud,t
                     Wind     
                 </Typography>
                 <Typography sx={{color:`${isNight?"white":"rgba(0, 0, 0, 0.6)"}`}}>
-                    {wind} km/h
+                    {wind} m/s
                 </Typography>
             </div>
             <div className='textInfo'>
@@ -111,6 +112,22 @@ export default function InfoCard({isNight,wind,weather,clouds,latitud,longitud,t
                 </Typography>
                 <Typography sx={{color:`${isNight?"white":"rgba(0, 0, 0, 0.6)"}`}}>
                     {weather}
+                </Typography>
+            </div>
+            <div className='textInfo'>
+                <Typography sx={{color:`${isNight?"white":"rgba(0, 0, 0, 0.6)"}`}} paragraph>
+                    Pressure    
+                </Typography>
+                <Typography sx={{color:`${isNight?"white":"rgba(0, 0, 0, 0.6)"}`}}>
+                    {pressure} hPa
+                </Typography>
+            </div>
+            <div className='textInfo'>
+                <Typography sx={{color:`${isNight?"white":"rgba(0, 0, 0, 0.6)"}`}} paragraph>
+                    Humidity    
+                </Typography>
+                <Typography sx={{color:`${isNight?"white":"rgba(0, 0, 0, 0.6)"}`}}>
+                    {humidity} %
                 </Typography>
             </div>
         </CardContent>

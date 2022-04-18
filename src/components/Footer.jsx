@@ -8,7 +8,7 @@ const openLink=(link)=>{
   window.open(link)
 }
   return (
-      <div className={`${!cities.length&&"fixed"} footer`}>
+      <div className={`${(!cities.length)&&"fixed"} footer`}>
           <div onClick={()=>openLink("https://marcelogottardini.vercel.app/")}>
             <AboutMeBtn />
           </div> 
