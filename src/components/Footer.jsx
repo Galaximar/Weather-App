@@ -10,7 +10,7 @@ const openLink=(link)=>{
   return (
       <div className={`${(!cities.length)&&"fixed"} footer`}>
           <div onClick={()=>openLink("https://marcelogottardini.vercel.app/")}>
-            <AboutMeBtn />
+            <AboutMeBtn text={"Portfolio"} />
           </div> 
           <img className='linkedin' onClick={()=>openLink("https://linkedin.com/in/marcelogottardini/")} src={linkedin} alt="linkedin.com/in/marcelogottardini/"/>
           <img className='github' onClick={()=>openLink("https://github.com/Galaximar")} src={github} alt="github.com/Galaximar"/>

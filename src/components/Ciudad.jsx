@@ -3,7 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import CiudadInfo from "./CiudadInfo";
 import './Ciudad.css'
 import Typography from '@mui/material/Typography'
-
+import AboutMeBtn from "./AboutMeBtn";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 export default function Ciudad() {
     let {id}=useParams()
@@ -15,12 +16,11 @@ export default function Ciudad() {
         .then(r=>r.json())
         .then((c)=>setCity({list:c.list,name:c.city.name}))
     },[id])
-    console.log(city)
     return ( 
         <div>
             <div className="title">
                 <div>
-                    <Link to="/"><button>{"<-"}</button></Link>
+                    <Link to="/"><AboutMeBtn text={<ArrowBackIosIcon />} /></Link>
                 </div>
                 <Typography variant="h3" sx={{color:"white"}}>
                     {city.name}

@@ -1,8 +1,8 @@
 import './AboutMeBtn.css'
-export default function AboutMeBtn () {
+export default function AboutMeBtn ({text}) {
     return (
         <>
-        <button className="c-button c-button--gooey"> Portfolio
+        <button className="c-button c-button--gooey"> {text}
         <div className="c-button__blobs">
         <div></div>
         <div></div>
