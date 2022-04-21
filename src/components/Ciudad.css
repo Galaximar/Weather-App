@@ -10,3 +10,88 @@
     transform: translateY(-50%);
     left: 0;
 }
+.graficoCom{
+    width: 70%;
+}
+.graficoCel {
+    width: 98%;
+}
+.graficoContainer{
+    width: 100%;
+    margin-bottom: 10px;
+}
+.grafico svg{
+    border-radius: 15px;
+    opacity: 0.87;
+    color: white;
+    width: 100%;
+}
+g text {
+    fill: orange;
+}
+.containerCarousel{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.btnCarousel{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.btnI{
+    top: 20px;
+    color: white;
+    position: absolute;
+    left: 20px;
+    background-color: rgba(128, 128, 128, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+}
+.btnINo{
+    top: 20px;
+    color: black;
+    position: absolute;
+    left: 20px;
+    background-color: rgba(128, 128, 128, 0.2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+}
+
+.btnD{
+    bottom: 20px;
+    color: white;
+    position: absolute;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    background-color: rgba(128, 128, 128, 0.2);
+    cursor: pointer;
+}
+.btnDNo{
+    bottom: 20px;
+    color: black;
+    position: absolute;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    background-color: rgba(128, 128, 128, 0.2);
+}
+.btnD:hover{
+    background-color: white;
+    color: black;
+}
+.btnI:hover{
+    background-color: white;
+    color: black;
+}
+
