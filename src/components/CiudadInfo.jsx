@@ -115,10 +115,6 @@ export default withWidth() (function Ciudad({c,width}) {
                                 <p>Wind</p>
                                 <p>{windDirection(c.wind.deg)} {c.wind.speed}m/s</p>
                             </div>
-                            <div className="spaceBetween">
-                                <p>Max wind</p>
-                                <p>{c.wind.gust}m/s</p>
-                            </div>
                         </div>
                     </CardContent>
                 </Collapse>

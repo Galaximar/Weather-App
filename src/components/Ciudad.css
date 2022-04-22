@@ -3,6 +3,9 @@
     margin-bottom: 10px;
     position: relative;
 }
+.title h3{
+    margin-left: 80px;
+}
 .title button{
     position: absolute;
     height: 100%;
@@ -17,8 +20,10 @@
     width: 98%;
 }
 .graficoContainer{
+    position: absolute;
+    height: 100%;
     width: 100%;
-    margin-bottom: 10px;
+    z-index: 100000;
 }
 .grafico svg{
     border-radius: 15px;
@@ -39,6 +44,7 @@ g text {
     width: 100%;
     height: 100%;
     top: 0;
+    z-index: 100000;
 }
 .btnI{
     top: 20px;
@@ -50,8 +56,9 @@ g text {
     height: 40px;
     border-radius: 50%;
     border: 0;
+    z-index: 100000;
 }
-.btnINo{
+.btnI:disabled{
     top: 20px;
     color: black;
     position: absolute;
@@ -64,7 +71,7 @@ g text {
 }
 
 .btnD{
-    bottom: 20px;
+    top: 290px;
     color: white;
     position: absolute;
     right: 20px;
@@ -74,8 +81,10 @@ g text {
     border: 0;
     background-color: rgba(128, 128, 128, 0.2);
     cursor: pointer;
+    z-index: 10000100;
 }
-.btnDNo{
+
+.btnD:disabled{
     bottom: 20px;
     color: black;
     position: absolute;
@@ -95,3 +104,17 @@ g text {
     color: black;
 }
 
+.loading{
+    position: relative;
+    z-index: 3000;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    opacity: .5;
+}
+.loading div{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+}

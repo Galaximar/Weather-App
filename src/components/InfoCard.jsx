@@ -67,9 +67,6 @@ export default function InfoCard({id,isNight,pressure,humidity,wind,weather,clou
         </div>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton sx={{zIndex:"10"}} aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
         <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
@@ -130,6 +127,9 @@ export default function InfoCard({id,isNight,pressure,humidity,wind,weather,clou
                     {humidity} %
                 </Typography>
             </div>
+            <Typography className='moreInfo' variant="body2" color="text.secondary">
+                <Link to={`city/${id}`}>More Info</Link>
+            </Typography>
         </CardContent>
       </Collapse>
     </Card>

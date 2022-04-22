@@ -8,6 +8,7 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import { Grafico } from "./Grafico";
 import {withWidth} from "@material-ui/core"
 import { Carousel } from "./Carousel";
+import { CircularProgress } from "@mui/material";
 
 
 export default withWidth() (function Ciudad({width}) {
@@ -36,7 +37,7 @@ export default withWidth() (function Ciudad({width}) {
         let data=[];
         city.list?.forEach(c=>{
             let day=date(c.dt_txt)[2].slice(0,2)/24
-            data=[...data,[date(c.dt_txt)[1]*1+day,option==="temp"?c.main.temp:c.main.pressure]]
+            data=[...data,[date(c.dt_txt)[1]*1+day,option==="temp"?c.main.temp:option==="press"?c.main.pressure:option==="wind"?c.wind.speed:c.main.humidity]]
         })
         return data;
     }
@@ -47,21 +48,31 @@ export default withWidth() (function Ciudad({width}) {
     },[id])
     return ( 
         <div>
-            <div className="title">
-                <div>
-                    <Link to="/"><AboutMeBtn text={<ArrowBackIosIcon />} /></Link>
+            {!city.list?<div className="loading"><div><CircularProgress size={100} color="warning" /></div></div>
+            :<>
+                <div className="title">
+                    <div>
+                        <Link to="/"><AboutMeBtn text={<ArrowBackIosIcon />} /></Link>
+                    </div>
+                    <Typography variant="h3" sx={{color:"white"}}>
+                        {city.name}
+                    </Typography>
                 </div>
-                <Typography variant="h3" sx={{color:"white"}}>
-                    {city.name}
-                </Typography>
-            </div>
-            {city.list?.length&&<Carousel width={width} data={[
-            <div className="graficoContainer"><Grafico title="Temperature vs Day" axis="Days" ordenada="Temperature [C°]"  values={dataChart("temp")}/></div>,
-            <div className="graficoContainer"><Grafico title="Pressure vs Day" axis="Days" ordenada="Pressure [hPa]"  values={dataChart()}/></div>
-            ]}/>}
-            {city.list?.map((c,i)=>
-            <CiudadInfo key={i} c={c} />
-            )}
+                {city.list?.length&&<Carousel width={width} data={[
+                <div className="graficoContainer"><Grafico title="Temperature vs Day" axis="Days" ordenada="Temperature [C°]"  values={dataChart("temp")}/></div>,
+                <div className="graficoContainer"><Grafico title="Pressure vs Day" axis="Days" ordenada="Pressure [hPa]"  values={dataChart("press")}/></div>,
+                <div className="graficoContainer"><Grafico title="Wind vs Day" axis="Days" ordenada="Wind [m/s]"  values={dataChart("wind")}/></div>,
+                <div className="graficoContainer"><Grafico title="Humidity vs Day" axis="Days" ordenada="Humidity %"  values={dataChart()}/></div>
+                ]}/>}
+                <div className="cardsCiudadInfo">
+
+                {city.list?.map((c,i)=>
+                <CiudadInfo key={i} c={c} />
+                )}
+                </div>
+            </>
+            }
+            
         </div>
     )
 })

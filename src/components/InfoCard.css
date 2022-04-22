@@ -13,3 +13,12 @@
     z-index: -1;
     opacity: .6;
 }
+.moreInfo{
+    background: #F37335;
+    border-radius: 15px;
+    padding: 4px 0 4px 0;
+}
+.moreInfo a{
+    font-size: 16px;
+    color: white;
+}

@@ -105,6 +105,9 @@ export default withWidth() (function InfoCard({id,pressure,humidity,width,wind,w
                     {humidity} %
                 </Typography>
             </div>
+            <Typography className='moreInfo' variant="body2" color="text.secondary">
+                <Link to={`city/${id}`}>More Info</Link>
+            </Typography>
         </CardContent>
       </Collapse>
     </Card>

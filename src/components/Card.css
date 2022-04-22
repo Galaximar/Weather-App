@@ -1,8 +1,7 @@
 .myCity{
-  position: absolute;
-  top: -260px;
+  margin-top: -140px;
   width: 70%;
-  left: 50%;
+  margin-left: 50%;
   transform: translateX(-50%);
 }
 
