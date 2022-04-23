@@ -10,12 +10,10 @@ import {withWidth} from "@material-ui/core"
 import { Carousel } from "./Carousel";
 import { CircularProgress } from "@mui/material";
 
-
 export default withWidth() (function Ciudad({width}) {
     let {id}=useParams()
-    const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
     const [city,setCity] = useState({});
-
+    const { REACT_APP_API_KEY } = process.env;
     const date=(text)=>{
         let months=["January","February","March","April","May","June","July","Agost","September","Octover","November","December"];
         let j;
@@ -42,10 +40,10 @@ export default withWidth() (function Ciudad({width}) {
         return data;
     }
     useEffect(()=>{
-        fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${id}&units=metric&appid=${apiKey}`)
+        fetch(`http://api.openweathermap.org/data/2.5/forecast?id=${id}&units=metric&appid=${REACT_APP_API_KEY}`)
         .then(r=>r.json())
         .then((c)=>setCity({list:c.list,name:c.city.name}))
-    },[id])
+    },[id,REACT_APP_API_KEY])
     return ( 
         <div>
             {!city.list?<div className="loading"><div><CircularProgress size={100} color="warning" /></div></div>

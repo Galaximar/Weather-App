@@ -7,8 +7,7 @@ import About from '../components/About.jsx';
 import Ciudad from '../components/Ciudad.jsx';
 import Footer from '../components/Footer';
 
-const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
-
+const  {REACT_APP_API_KEY}  = process.env;
 function App() {
   const [cities, setCities] = useState([]);
   const [myCitie,setMyCitie] = useState({});
@@ -23,7 +22,7 @@ function App() {
   },[])
   useEffect(()=>{
     position===400?setMyCitie({status:400})
-    :fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${position[1]}&lon=${position[0]}&units=metric&appid=${apiKey}`)
+    :fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${position[1]}&lon=${position[0]}&units=metric&appid=${REACT_APP_API_KEY}`)
     .then(r=>r.json())
     .then(recurso=>{setMyCitie({
       min: Math.round(recurso.main.temp_min),
@@ -57,7 +56,7 @@ function App() {
   function onSearch(ciudad) {
     //Llamado a la API del clima
     if(!cities.find(c=>c.name.toLowerCase()===ciudad.toLowerCase()))
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&units=metric&appid=${apiKey}`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${ciudad}&units=metric&appid=${REACT_APP_API_KEY}`)
       .then(r => r.json())
       .then((recurso) => {
         if(recurso.main !== undefined){
