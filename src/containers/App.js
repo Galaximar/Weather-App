@@ -6,7 +6,6 @@ import Cards from '../components/Cards.jsx';
 import About from '../components/About.jsx';
 import Ciudad from '../components/Ciudad.jsx';
 import Footer from '../components/Footer';
-
 const  {REACT_APP_API_KEY}  = process.env;
 function App() {
   const [cities, setCities] = useState([]);
