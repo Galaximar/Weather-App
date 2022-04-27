@@ -35,7 +35,7 @@ export default withWidth() (function Ciudad({width}) {
         let data=[];
         city.list?.forEach(c=>{
             let day=date(c.dt_txt)[2].slice(0,2)/24
-            data=[...data,[date(c.dt_txt)[1]*1+day,option==="temp"?c.main.temp:option==="press"?c.main.pressure:option==="wind"?c.wind.speed:c.main.humidity]]
+            data=[...data,[`${date(c.dt_txt)[1]*1+day}`,option==="temp"?c.main.temp:option==="press"?c.main.pressure:option==="wind"?c.wind.speed:c.main.humidity]]
         })
         return data;
     }
